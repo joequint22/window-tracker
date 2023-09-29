@@ -1,23 +1,50 @@
 import logo from './logo.svg';
 import './App.css';
+import { ReactDOM } from 'react';
+import React, {useState, useEffect} from "react";
+import WindowTracker from "./components/WindowTracker"
 
 function App() {
+
+  const [show, setShow] = useState(true)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container"
+      style={{ 
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center"
+      }}
+    >
+
+          <span
+            onClick={()=>{
+              setShow(oldShow => !oldShow)
+            }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              width: "80%",
+              marginTop: 100,
+              height: "10%",
+              backgroundColor: "white",
+              borderRadius: "7px",
+              textDecoration: "none",
+              
+            }}
+          >
+                  <span
+                    style={{
+                      padding: 25,
+                      fontSize: 20,
+                    }}
+                      >Toggle windowTracker</span>
+          </span>
+          {show && <WindowTracker />}
+
+
     </div>
   );
 }

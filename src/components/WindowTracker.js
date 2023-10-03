@@ -3,13 +3,16 @@ import React, { useEffect, useState } from "react"
 
 export default function WindowTracker(){
 
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
-    useEffect(() => {
-        function watchWidth(){
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+    
+    function watchWidth(){
             console.log("resizing...")
             setWindowWidth(window.innerWidth)
-        }
+    }
+
+    useEffect(() => {
+        //Mounting the addEventListener
         window.addEventListener("resize", watchWidth)
 
         return () => {
@@ -19,7 +22,7 @@ export default function WindowTracker(){
 
 
 
-    })
+    }, [])
 
         return(
             <h1

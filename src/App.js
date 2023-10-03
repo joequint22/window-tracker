@@ -23,24 +23,18 @@ function App() {
               setShow(oldShow => !oldShow)
             }}
             style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
+              display: "grid",
+              placeItems: "center",              
               width: "80%",
-              marginTop: 100,
               height: "10%",
               backgroundColor: "white",
               borderRadius: "7px",
               textDecoration: "none",
-              
+              fontSize: 20,
+              marginTop: 100,
             }}
           >
-                  <span
-                    style={{
-                      padding: 25,
-                      fontSize: 20,
-                    }}
-                      >Toggle windowTracker</span>
+                  Toggle windowTracker
           </span>
           {show && <WindowTracker />}
 
